@@ -1,6 +1,6 @@
 # ddu-source-patch_local
 
-PatchLocal source for ddu.vim
+patch_local source for ddu.vim
 
 This source collects all of ddu#custom#patch_local() name.
 
