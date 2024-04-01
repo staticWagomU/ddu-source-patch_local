@@ -12,13 +12,12 @@ export class Source extends BaseSource<Params, ActionData> {
   #items: Item<ActionData>[] = [];
 
   override async onInit(args: OnInitArguments<Params>): Promise<void> {
-    const patchLocals = await args.denops.call(
-      "ddu#custom#get_local",
-    ) as Partial<DduOptions>;
-    this.#items = Object.keys(patchLocals).map((word) => ({
-      word,
-      action: { name: word },
-    }));
+    const localNames = await args.denops.call("ddu#custom#get_names");
+    this.#items = ensure(localNames, is.ArrayOf(is.String))
+      .map((word) => ({
+        word,
+        action: { name: word },
+      }));
   }
 
   override gather(_args: unknown): ReadableStream<Item<ActionData>[]> {
