@@ -4,6 +4,7 @@ import {
   BaseSource,
   type OnInitArguments,
 } from "https://deno.land/x/ddu_vim@v3.4.3/base/source.ts";
+import { ensure, is } from "https://deno.land/x/unknownutil@v3.17.2/mod.ts";
 
 type Params = Record<never, never>;
 
