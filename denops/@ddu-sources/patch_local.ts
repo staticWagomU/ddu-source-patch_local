@@ -1,4 +1,4 @@
-import { DduOptions, Item } from "https://deno.land/x/ddu_vim@v3.4.4/types.ts";
+import { Item } from "https://deno.land/x/ddu_vim@v3.4.4/types.ts";
 import type { ActionData } from "../@ddu-kinds/patch_local.ts";
 import {
   BaseSource,
